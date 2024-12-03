@@ -49,7 +49,7 @@ jobs:
         host: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SERVER_KEY }}
-        port: 22
+        port: 65002
         script: |
           cd /home/usuario/public_html/tu-aplicacion
           git pull origin main
