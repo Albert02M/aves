@@ -54,4 +54,4 @@ jobs:
           cd /home/todo1975/prueba
           git pull origin main
           composer install
-
+        debug: true
