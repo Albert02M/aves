@@ -15,6 +15,7 @@ jobs:
       with:
         php-version: '8.2'
         extensions: mbstring, bcmath, intl, openssl, pdo_mysql
+        ini-values: post_max_size=256M, upload_max_filesize=256M
     - uses: actions/checkout@v3
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -42,18 +43,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Desplegar a través de SSH
-    - name: Deploy to Hostinger via SSH
-      uses: appleboy/ssh-action@v0.1.5
+    # Desplegar a través de FTP
+    - name: Deploy to Hostinger via FTP
+      uses: appleboy/ftp-action@v0.1.4
       with:
-        host: ${{ secrets.SERVER_HOST }}
-        username: ${{ secrets.SERVER_USER }}
-        key: ${{ secrets.SERVER_KEY }}
-        port: 65002
-        script: |
-          cd /home/todo1975/testDC
-          git pull origin main
-          composer install
-        debug: true
-
-
+        host: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21
+        local-dir: ./ # La carpeta que deseas subir (puedes cambiarla si es necesario)
+        server-dir: /testDC # Directorio de destino en el servidor FTP
