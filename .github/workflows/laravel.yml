@@ -19,7 +19,7 @@ jobs:
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Composer dependencies
-      run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+      run: composer install
     - name: Generate application key
       run: php artisan key:generate
     - name: Set directory permissions
@@ -51,7 +51,7 @@ jobs:
         key: ${{ secrets.SERVER_KEY }}
         port: 65002
         script: |
-          cd /home/todo1975/prueba
+          cd /home/todo1975/testDC
           git pull origin main
           composer install
         debug: true
