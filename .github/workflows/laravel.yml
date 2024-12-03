@@ -23,7 +23,6 @@ jobs:
 
     - name: Install Composer dependencies
       run: composer install
-
     - name: Generate application key
       run: php artisan key:generate
 
@@ -51,11 +50,11 @@ jobs:
 
     # Despliegue mediante FTP
     - name: Deploy to Hostinger via FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.5.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        ftp-server: ${{ secrets.FTP_HOST }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./ # Carpeta local que se desplegará
-        server-dir: /testDC # Carpeta destino en el servidor
-        dry-run: false # Cambia a "true" para probar sin subir archivos
+        server-dir: /public_html/tu-aplicacion # Carpeta destino en el servidor
+        dry-run: false
