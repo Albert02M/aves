@@ -9,7 +9,7 @@
 <body>
     <header class="hero">
         <nav class="navbar">
-            <div class="logo">Tech<span>Solutions</span></div>
+            <div class="logo">iDevs<span>Solutions</span></div>
             <ul class="nav-links">
                 <li><a href="#about">Nosotros</a></li>
                 <li><a href="#services">Servicios</a></li>
