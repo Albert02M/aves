@@ -56,6 +56,6 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./ # Carpeta local que se desplegará
-        server-dir: /home/todo1975/testDC/ # Carpeta destino en el servidor
+        server-dir: /testDC/ # Carpeta destino en el servidor
         dry-run: false
         dangerous-clean-slate: true  # Borra archivos antiguos
