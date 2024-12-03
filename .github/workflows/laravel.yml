@@ -58,4 +58,3 @@ jobs:
         local-dir: ./ # Carpeta local que se desplegará
         server-dir: /home/todo1975/testDC/ # Carpeta destino en el servidor
         dry-run: false
-
