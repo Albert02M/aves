@@ -52,4 +52,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
         local-dir: ./ # La carpeta que deseas subir (puedes cambiarla si es necesario)
-        server-dir: /public_html/tu-aplicacion # Directorio de destino en el servidor FTP
+        server-dir: /public_html/prueba # Directorio de destino en el servidor FTP
