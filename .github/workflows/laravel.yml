@@ -51,12 +51,7 @@ jobs:
         key: ${{ secrets.SERVER_KEY }}
         port: 65002
         script: |
-          cd /home/usuario/public_html/tu-aplicacion
+          cd /home/todo1975/prueba
           git pull origin main
-          composer install --no-dev --optimize-autoloader
-          php artisan migrate --force
-          php artisan cache:clear
-          php artisan config:cache
-          php artisan route:cache
-          npm install --production
-          npm run production
+          composer install
+
