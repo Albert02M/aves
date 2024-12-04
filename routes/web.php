@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/test-rollbar', function () {
+//     throw new Exception("¡Esto es una prueba de Rollbar!");
+// });
